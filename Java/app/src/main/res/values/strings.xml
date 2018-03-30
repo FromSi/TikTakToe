@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FS_TikTakToe</string>
+    <string name="fs_tiktaktoe">FS_TikTakToe</string>
+    <string name="play">play</string>
+    <string name="victory">GG WP</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_1">Player 1</string>
+    <string name="enterOne">Enter the name of the first player</string>
+    <string name="enterTwo">Enter the name of the second player</string>
+    <string name="positiveButton">Okey</string>
+    <string name="winner">Winner</string>
+    <string name="step">Step</string>
+</resources>
