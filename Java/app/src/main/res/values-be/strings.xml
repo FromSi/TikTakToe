@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Крыжыкі-нулікі</string>
+    <string name="player_1">Iгрок 1</string>
+    <string name="player_2">Iгрок 2</string>
+    <string name="enterOne">Вы не ўвялі nick першага гульца</string>
+    <string name="enterTwo">Вы не ўвялі nick другога гульца</string>
+    <string name="step">Ход</string>
+    <string name="singleplayer">Адзiночная</string>
+    <string name="multiplayer">Мультыплэер</string>
+    <string name="back">Меню</string>
+    <string name="clear">Сыграць зноў</string>
+</resources>

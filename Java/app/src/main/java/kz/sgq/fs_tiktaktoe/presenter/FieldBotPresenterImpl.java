@@ -4,11 +4,12 @@ import kz.sgq.fs_tiktaktoe.model.FieldModel;
 import kz.sgq.fs_tiktaktoe.model.FieldModelImpl;
 import kz.sgq.fs_tiktaktoe.ui.FieldView;
 
-public class FieldPresenterImlp implements FieldPresenter {
+public class FieldBotPresenterImpl implements FieldPresenter {
+
     private FieldView view;
     private FieldModel model;
 
-    public FieldPresenterImlp(FieldView view, String stepText) {
+    public FieldBotPresenterImpl(FieldView view, String stepText) {
         this.view = view;
         init(stepText);
     }
@@ -27,24 +28,25 @@ public class FieldPresenterImlp implements FieldPresenter {
         if (!model.getEnd() &&
                 !model.checkDraw()) {
             if (model.onClickBox(i)) {
-                if (model.isStep()) {
-                    view.setListBox(i, "X");
-                    if (model.checkVictory()) {
-                        view.textColorEnd(model.getBoxWinList());
-                        view.setVictoryOne(model.getScorePlayerOne());
-                    } else {
-                        model.setStep(false);
+                view.setListBox(i, "X");
+                if (!model.checkVictory()) {
+                    model.setStep(false);
+                    if (model.checkDraw()) {
+                        return;
                     }
-                } else {
-                    view.setListBox(i, "O");
-                    if (model.checkVictory()) {
+                    int autoClick = model.stepBot();
+                    model.onClickBox(autoClick);
+                    view.setListBox(autoClick, "O");
+                    if (!model.checkVictory()) {
+                        model.setStep(true);
+                    } else {
                         view.textColorEnd(model.getBoxWinList());
                         view.setVictoryTwo(model.getScorePlayerTwo());
-                    } else {
-                        model.setStep(true);
                     }
                 }
-                view.setStep(model.getStep());
+                else
+                    view.textColorEnd(model.getBoxWinList());
+                    view.setVictoryOne(model.getScorePlayerOne());
             }
         } else {
             view.textColor();
@@ -78,5 +80,4 @@ public class FieldPresenterImlp implements FieldPresenter {
         model.createLists();
         model.setStep(true);
     }
-
 }

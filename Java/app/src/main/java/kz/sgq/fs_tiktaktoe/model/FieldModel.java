@@ -13,4 +13,8 @@ public interface FieldModel {
     void createLists();
     boolean checkDraw();
     void clearScore();
+    void setStepText(String str);
+    int stepBot();
+    boolean getEnd();
+    List<Integer> getBoxWinList();
 }

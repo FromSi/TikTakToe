@@ -69,22 +69,31 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical">
 
-            <ImageView
+            <TextView
                 android:id="@+id/back"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/ic_people_outline_black_24dp"
+                android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true" />
-            <ImageView
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/clear"
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_delete_sweep_black_24dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:focusable="true" />
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/clear"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
@@ -113,7 +122,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box12"
@@ -125,7 +135,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box13"
@@ -137,7 +148,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box21"
@@ -149,7 +161,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box22"
@@ -162,7 +175,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box23"
@@ -175,7 +189,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box31"
@@ -187,7 +202,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box32"
@@ -200,7 +216,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
             <TextView
                 android:id="@+id/box33"
@@ -213,7 +230,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorText"
                 android:textSize="68sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"/>
 
 
             <ImageView

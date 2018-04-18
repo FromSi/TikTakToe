@@ -1,7 +1,7 @@
-package kz.sgq.fs_tiktaktoe.model;
+package kz.sgq.fs_tiktaktoe.utilit;
 
-public class FieldModelBase {
-    private int[][] answerArr = {{0, 1, 2},
+public class AnswerField {
+    private static int[][] answerArr = {{0, 1, 2},
             {0, 3, 6},
             {0, 4, 8},
             {1, 4, 7},
@@ -10,7 +10,7 @@ public class FieldModelBase {
             {3, 4, 5},
             {6, 7, 8}};
 
-    public int getAnswer(int i, int j) {
+    public static int getAnswer(int i, int j) {
         return answerArr[i][j];
     }
 }

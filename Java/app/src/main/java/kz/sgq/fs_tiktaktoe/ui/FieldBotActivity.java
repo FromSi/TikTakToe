@@ -1,7 +1,7 @@
 package kz.sgq.fs_tiktaktoe.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,11 +12,10 @@ import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import kz.sgq.fs_tiktaktoe.R;
+import kz.sgq.fs_tiktaktoe.presenter.FieldBotPresenterImpl;
 import kz.sgq.fs_tiktaktoe.presenter.FieldPresenter;
-import kz.sgq.fs_tiktaktoe.presenter.FieldPresenterImlp;
 
-public class FieldActivity extends AppCompatActivity implements FieldView {
-
+public class FieldBotActivity extends AppCompatActivity implements FieldView {
     private FieldPresenter presenter;
 
     @BindView(R.id.playerOne)
@@ -42,7 +41,7 @@ public class FieldActivity extends AppCompatActivity implements FieldView {
     }
 
     private void init() {
-        presenter = new FieldPresenterImlp(this,
+        presenter = new FieldBotPresenterImpl(this,
                 getResources().getString(R.string.step));
     }
 
@@ -147,7 +146,8 @@ public class FieldActivity extends AppCompatActivity implements FieldView {
     @Override
     public void textColorEnd(List<Integer> list) {
         for (int i = 0; i < listBox.size(); i++) {
-            if (list.get(0) != i && list.get(1) != i &&
+            if (list.get(0) != i &&
+                    list.get(1) != i &&
                     list.get(2) != i)
                 listBox.get(i).setTextColor(getResources().
                         getColor(R.color.colorAccent));

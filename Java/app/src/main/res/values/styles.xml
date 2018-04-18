@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Translate.Button" parent="ThemeOverlay.AppCompat">
+        <item name="colorButtonNormal">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
 </resources>
