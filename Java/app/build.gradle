@@ -6,8 +6,8 @@ android {
         applicationId "kz.sgq.fs_tiktaktoe"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -25,7 +25,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.support:cardview-v7:27.1.0'

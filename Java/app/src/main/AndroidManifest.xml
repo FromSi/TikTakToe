@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,10 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.FieldActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.FieldBotActivity"
+            android:name=".ui.activity.FieldActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Хрестики-нолики</string>
+    <string name="player_1">Гравець 1</string>
+    <string name="player_2">Гравець 2</string>
+    <string name="enterOne">Ви не ввели nick першого гравця</string>
+    <string name="enterTwo">Ви не ввели nick другого гравця</string>
+    <string name="step">Хід</string>
+    <string name="singleplayer">Одиночна</string>
+    <string name="multiplayer">Мультіплеєр</string>
+    <string name="back">Меню</string>
+    <string name="clear">Заново</string>
+</resources>

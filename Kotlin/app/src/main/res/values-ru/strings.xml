@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Крестики-нолики</string>
+    <string name="player_1">Игрок 1</string>
+    <string name="player_2">Игрок 2</string>
+    <string name="enterOne">Вы не ввели имя первого игрока</string>
+    <string name="enterTwo">Вы не ввели имя второго игрока</string>
+    <string name="step">Ход</string>
+    <string name="singleplayer">Одиночная</string>
+    <string name="multiplayer">Мультиплеер</string>
+    <string name="back">Меню</string>
+    <string name="clear">Заново</string>
+</resources>

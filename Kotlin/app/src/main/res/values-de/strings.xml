@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tic-Tac-Toe</string>
+    <string name="player_1">Spieler 1</string>
+    <string name="player_2">Spieler 2</string>
+    <string name="enterOne">Sie haben den Spieler Name des ersten Spielers nicht eingegeben</string>
+    <string name="enterTwo">Sie haben den Spieler Name des zweiten Spielers nicht eingegeben</string>
+    <string name="step">Dran</string>
+    <string name="singleplayer">Einzelspiel</string>
+    <string name="multiplayer">Mehrspielermodus</string>
+    <string name="back">Menü</string>
+    <string name="clear">Zurücksetzen</string>
+</resources>
