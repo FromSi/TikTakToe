@@ -1,26 +1,35 @@
 package kz.sgq.kotlintictactoe.ui.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.arellomobile.mvp.MvpActivity
+import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import kotlinx.android.synthetic.main.activity_field.*
 import kz.sgq.kotlintictactoe.R
-import kz.sgq.kotlintictactoe.mvp.presenter.FieldBotPresenterImpl
-import kz.sgq.kotlintictactoe.mvp.presenter.FieldPresenterImpl
-import kz.sgq.kotlintictactoe.mvp.presenter.interfaces.FieldPresenter
+import kz.sgq.kotlintictactoe.mvp.presenter.FieldPresenter
 import kz.sgq.kotlintictactoe.mvp.view.FieldView
 
-class FieldActivity : AppCompatActivity(), FieldView {
+class FieldActivity : MvpActivity(), FieldView {
 
-    private lateinit var presenter: FieldPresenter
+    @InjectPresenter
+    lateinit var presenter: FieldPresenter
+
+    @ProvidePresenter
+    fun provideFieldPresenter(): FieldPresenter {
+        return if (intent.getBooleanExtra("mode", true))
+            FieldPresenter(true, getString(R.string.step),
+                    intent.getStringExtra("playerOne"),
+                    intent.getStringExtra("playerTwo"))
+        else
+            FieldPresenter(false, getString(R.string.step),
+                    intent.getStringExtra("playerOne"),
+                    intent.getStringExtra("playerTwo"))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_field)
-        presenter = if (intent.getBooleanExtra("mode", true))
-            FieldBotPresenterImpl(this, getString(R.string.step))
-        else
-            FieldPresenterImpl(this, getString(R.string.step))
     }
 
     fun onClickBox(view: View) {
@@ -38,15 +47,6 @@ class FieldActivity : AppCompatActivity(), FieldView {
             R.id.clear -> presenter.onClickClear()
         }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.onDestroy()
-    }
-
-    override fun getPlayerOne(): String = intent.getStringExtra("playerOne")
-
-    override fun getPlayerTwo(): String = intent.getStringExtra("playerTwo")
 
     override fun setStep(text: String) {
         step.text = text

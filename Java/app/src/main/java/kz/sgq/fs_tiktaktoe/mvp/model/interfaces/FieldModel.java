@@ -6,6 +6,7 @@ public interface FieldModel {
     String getScorePlayerOne();
     String getScorePlayerTwo();
     String getStep();
+    boolean isMode();
     boolean onClickBox(int i);
     boolean isStep();
     boolean checkVictory();
@@ -14,6 +15,7 @@ public interface FieldModel {
     int stepBot();
     List<Integer> getBoxWinList();
     void setStep(boolean b);
+    void setMode(boolean b);
     void setStepText(String str);
     void createLists();
     void clearScore();

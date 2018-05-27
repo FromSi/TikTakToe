@@ -15,6 +15,7 @@ class FieldModelImpl(
     private var scorePlayerOne: Int = 0
     private var scorePlayerTwo: Int = 0
     private var step: Boolean = true
+    private var mode: Boolean = true
     private var end: Boolean = false
     private var listBoxOne: MutableList<Int> = arrayListOf()
     private var listBoxTwo: MutableList<Int> = arrayListOf()
@@ -45,6 +46,13 @@ class FieldModelImpl(
 
     override fun isStep(): Boolean = step
 
+    override fun isMode(): Boolean {
+        return mode
+    }
+
+    override fun setMode(mode: Boolean) {
+        this.mode = mode
+    }
     override fun checkVictory(): Boolean {
         return if (step)
             if (checkBox(listBoxOne)) {

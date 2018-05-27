@@ -1,9 +1,12 @@
 package kz.sgq.fs_tiktaktoe.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.arellomobile.mvp.MvpActivity;
+import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import java.util.List;
 
@@ -12,14 +15,25 @@ import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import kz.sgq.fs_tiktaktoe.R;
-import kz.sgq.fs_tiktaktoe.mvp.presenter.FieldBotPresenterImpl;
-import kz.sgq.fs_tiktaktoe.mvp.presenter.interfaces.FieldPresenter;
-import kz.sgq.fs_tiktaktoe.mvp.presenter.FieldPresenterImlp;
+import kz.sgq.fs_tiktaktoe.mvp.presenter.FieldPresenter;
 import kz.sgq.fs_tiktaktoe.mvp.view.FieldView;
 
-public class FieldActivity extends AppCompatActivity implements FieldView {
+public class FieldActivity extends MvpActivity implements FieldView {
 
-    private FieldPresenter presenter;
+    @InjectPresenter
+    FieldPresenter presenter;
+
+    @ProvidePresenter
+    FieldPresenter provideFieldPresenter(){
+        if (getIntent().getBooleanExtra("mode", true))
+            return new FieldPresenter(true, getResources().getString(R.string.step),
+                    getIntent().getStringExtra("playerOne"),
+                    getIntent().getStringExtra("playerTwo"));
+        else
+            return new FieldPresenter(false, getResources().getString(R.string.step),
+                    getIntent().getStringExtra("playerOne"),
+                    getIntent().getStringExtra("playerTwo"));
+    }
 
     @BindView(R.id.playerOne)
     TextView playerOne;
@@ -40,16 +54,6 @@ public class FieldActivity extends AppCompatActivity implements FieldView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field);
         ButterKnife.bind(this);
-        init();
-    }
-
-    private void init() {
-        if (getIntent().getBooleanExtra("mode", true))
-            presenter = new FieldBotPresenterImpl(this,
-                    getResources().getString(R.string.step));
-        else
-            presenter = new FieldPresenterImlp(this,
-                    getResources().getString(R.string.step));
     }
 
     @OnClick({R.id.box11, R.id.box12, R.id.box13,
@@ -98,16 +102,6 @@ public class FieldActivity extends AppCompatActivity implements FieldView {
     protected void onDestroy() {
         super.onDestroy();
         presenter.onDestroy();
-    }
-
-    @Override
-    public String getPlayerOne() {
-        return getIntent().getStringExtra("playerOne");
-    }
-
-    @Override
-    public String getPlayerTwo() {
-        return getIntent().getStringExtra("playerTwo");
     }
 
     @Override

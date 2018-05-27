@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun startIntent(intent: Intent) {
         if (!TextUtils.isEmpty(playerOne.text) &&
-                !TextUtils.isEmpty(playerTwo.text)){
+                !TextUtils.isEmpty(playerTwo.text)) {
             intent.putExtra("playerOne", playerOne.text.toString())
                     .putExtra("playerTwo", playerTwo.text.toString())
             startActivity(intent)

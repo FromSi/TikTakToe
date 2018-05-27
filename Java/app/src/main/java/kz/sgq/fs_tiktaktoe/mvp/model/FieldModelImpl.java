@@ -18,6 +18,7 @@ public class FieldModelImpl implements FieldModel {
     private List<Integer> boxWinList;
     private boolean step = true;
     private boolean end = false;
+    private boolean mode = false;
     private String stepText;
 
     public FieldModelImpl(String playerOne, String playerTwo) {
@@ -44,6 +45,11 @@ public class FieldModelImpl implements FieldModel {
             return stepText + " " + playerOne;
         else
             return stepText + " " + playerTwo;
+    }
+
+    @Override
+    public boolean isMode() {
+        return mode;
     }
 
     @Override
@@ -91,6 +97,11 @@ public class FieldModelImpl implements FieldModel {
     @Override
     public void setStep(boolean b) {
         step = b;
+    }
+
+    @Override
+    public void setMode(boolean b) {
+        mode = b;
     }
 
     @Override
